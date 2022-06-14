@@ -1,6 +1,10 @@
 // import modules
 
-import express from 'express'
+// import * as studentRoster from "./data/students-roster.js"
+import express from "express"
+import { students } from "./data/students-roster.js"
+  // this will import the students data 
+  
 
 // Create Express app
 
@@ -22,6 +26,13 @@ app.get("/", function(req,res){
 app.get("/home", function(req, res){
   res.render("home")
 
+})
+
+app.get("/students", function (req, res){
+  res.render("students/index", {
+    students : students
+
+  })
 })
 
 
